@@ -1,18 +1,27 @@
 package org.example;
 
 public class Box<T>  {
-    private T box;
+    private T value;
 
-    public T getBox() {
-        return box;
+    public Box() {
     }
 
-    public void setBox(T box) {
-        this.box = box;
+    public T getValue() {
+        return value;
     }
 
-    public Box(T box) {
-        this.box = box;
+    public void setValue(T value) {
+        this.value = value;
+    }
+
+    public T castValue(T value) {
+        try {
+            this.value = value;
+        } catch (ClassCastException e) {
+            System.out.println("Cast exception: " + e);
+        }
+
+        return this.value;
     }
 }
 
