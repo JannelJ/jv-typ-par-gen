@@ -1,8 +1,9 @@
 package org.example;
 
-public class Box<T>  {
+public class Box<T, V extends Number>{
     private T value;
     private String name;
+    private V largestValue;
 
     public Box(String name) {
         this.name = name;
@@ -19,6 +20,21 @@ public class Box<T>  {
         this.value = value;
     }
 
+    public V getLargestValue(){
+        return largestValue;
+    }
+    public  setLargestValue(V arg1, V arg2) {
+        double value1 = arg1.doubleValue();
+        double value2 = arg2.doubleValue();
+
+        if (value1 > value2) {
+            this.largestValue = arg1;
+        } else {
+            this.largestValue = arg2;
+        }
+    }
+
+
     public T castValue(T value) {
         try {
             this.value = value;
@@ -28,8 +44,10 @@ public class Box<T>  {
         return this.value;
     }
 
-    public boolean hasSameName(Box<?> box) {
+
+    public boolean hasSameName(Box<?, V> box) {
         return box.name.equalsIgnoreCase(this.name);
     }
 }
+
 
