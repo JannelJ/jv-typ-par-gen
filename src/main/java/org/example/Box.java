@@ -2,6 +2,11 @@ package org.example;
 
 public class Box<T>  {
     private T value;
+    private String name;
+
+    public Box(String name) {
+        this.name = name;
+    }
 
     public Box() {
     }
@@ -20,8 +25,11 @@ public class Box<T>  {
         } catch (ClassCastException e) {
             System.out.println("Cast exception: " + e);
         }
-
         return this.value;
+    }
+
+    public boolean hasSameName(Box<?> box) {
+        return box.name.equalsIgnoreCase(this.name);
     }
 }
 
