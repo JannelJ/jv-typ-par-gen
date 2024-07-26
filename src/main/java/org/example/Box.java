@@ -1,9 +1,11 @@
 package org.example;
 
-public class Box<T, V extends Number>{
+public class Box<T, V extends Number> implements BoxOperations<V> {
     private T value;
     private String name;
     private V largestValue;
+    private V input1;
+    private V input2;
 
     public Box(String name) {
         this.name = name;
@@ -23,6 +25,7 @@ public class Box<T, V extends Number>{
     public V getLargestValue(){
         return largestValue;
     }
+
     public V setLargestValue(V arg1, V arg2) {
         double value1 = arg1.doubleValue();
         double value2 = arg2.doubleValue();
