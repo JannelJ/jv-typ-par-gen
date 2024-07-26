@@ -23,7 +23,7 @@ public class Box<T, V extends Number>{
     public V getLargestValue(){
         return largestValue;
     }
-    public  setLargestValue(V arg1, V arg2) {
+    public V setLargestValue(V arg1, V arg2) {
         double value1 = arg1.doubleValue();
         double value2 = arg2.doubleValue();
 
@@ -32,6 +32,7 @@ public class Box<T, V extends Number>{
         } else {
             this.largestValue = arg2;
         }
+        return this.largestValue;
     }
 
 

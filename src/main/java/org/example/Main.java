@@ -4,14 +4,16 @@ public class Main {
 
     public static void main(String[] args) {
 
-      Box<String> box1 = new Box<>();
-//        Box<Integer> box2 = new Box<>();
-//
-//        System.out.println(box1.castValue("testString"));
-//        System.out.println(box2.castValue(45));
+      Box<String, Integer> box1 = new Box<>(); // T stores a string, V stores integer
+      Box<Integer, Integer> box2 = new Box<>(); // T stores integer, V stores integer as largest value
 
-        box1.setLargestValue(2, 9);
-        System.out.println(box1);
+        System.out.println(box1.castValue("Hello"));
+        System.out.println(box2.castValue(45));
+
+       Integer largest = box1.setLargestValue(16, 5);
+
+        System.out.println(largest);
+
 
 
 
