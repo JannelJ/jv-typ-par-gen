@@ -14,7 +14,7 @@ public class Main {
         System.out.println(box2.castValue(45));
 
         box1.setLargestValue(16, 5);
-//        box2.getLargestValue();
+
         System.out.println(box1.getLargestValue());
 
         List<Integer> numbersList = new ArrayList<>();
@@ -26,6 +26,18 @@ public class Main {
         box2.setLargestValueFromList(numbersList);
         System.out.println(box2.getLargestValue());
 
+        BoxCache<Integer, Box<String, Float>> boxCache = new BoxCache<>();
+        Box<String, Float> box = new Box<>("FloatBox");
+        boxCache.put(1, box);
+        System.out.println("**BoxCache: " + boxCache.getKey());
+        System.out.println("**BoxCache: " + boxCache.getValue().getName());
+/*
+        BoxCache<String, String> dodgyCache = new BoxCache<>();
+        dodgyCache.put("Test", "Fail");
+        System.out.println("**BoxCache 2nd bit: " + dodgyCache.getKey());
+        System.out.println("**BoxCache 2nd bit: " + dodgyCache.getValue());
+
+ */
     }
 
 }

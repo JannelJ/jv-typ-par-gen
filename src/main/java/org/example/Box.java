@@ -48,9 +48,9 @@ public class Box<T, V extends Number & Comparable<V>> implements BoxOperations<V
     }
 
 
-    public T castValue(T value) {
+    public <V> T castValue(V value) {
         try {
-            this.value = value;
+            return (T)value;
         } catch (ClassCastException e) {
             System.out.println("Cast exception: " + e);
         }
