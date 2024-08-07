@@ -1,5 +1,8 @@
 package org.example;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class Main {
 
     public static void main(String[] args) {
@@ -10,13 +13,18 @@ public class Main {
         System.out.println(box1.castValue("Hello"));
         System.out.println(box2.castValue(45));
 
-        Integer largest = box1.setLargestValue(16, 5);
+        box1.setLargestValue(16, 5);
 //        box2.getLargestValue();
+        System.out.println(box1.getLargestValue());
 
-        System.out.println(largest);
+        List<Integer> numbersList = new ArrayList<>();
+        numbersList.add(3);
+        numbersList.add(14);
+        numbersList.add(6);
+        numbersList.add(8);
 
-
-
+        box2.setLargestValueFromList(numbersList);
+        System.out.println(box2.getLargestValue());
 
     }
 
